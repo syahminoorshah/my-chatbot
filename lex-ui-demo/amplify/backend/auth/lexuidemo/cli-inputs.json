@@ -1,0 +1,12 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "lexuidemo_identitypool_31fe0f75",
+    "allowUnauthenticatedIdentities": true,
+    "authSelections": "identityPoolOnly",
+    "resourceName": "lexuidemo",
+    "sharedId": "31fe0f75",
+    "serviceName": "Cognito",
+    "useDefault": "manual"
+  }
+}

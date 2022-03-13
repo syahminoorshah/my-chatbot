@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-lexuidemo-dev-92822-authRole",
+      "UnauthRoleArn": "arn:aws:iam::891055143482:role/amplify-lexuidemo-dev-92822-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::891055143482:role/amplify-lexuidemo-dev-92822-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-lexuidemo-dev-92822-deployment",
+      "UnauthRoleName": "amplify-lexuidemo-dev-92822-unauthRole",
+      "StackName": "amplify-lexuidemo-dev-92822",
+      "StackId": "arn:aws:cloudformation:us-east-1:891055143482:stack/amplify-lexuidemo-dev-92822/11012780-99c8-11ec-8b7c-0a494b6818d5",
+      "AmplifyAppId": "d2vf51bpmzuvfk"
+    },
+    "categories": {
+      "auth": {
+        "undefined": {}
+      },
+      "interactions": {
+        "lex35cbe81a": {
+          "deploymentBucketName": "amplify-lexuidemo-dev-92822-deployment",
+          "s3Key": "amplify-builds/lex35cbe81a-7874496b705837574332-build.zip"
+        }
+      }
+    }
+  }
+}

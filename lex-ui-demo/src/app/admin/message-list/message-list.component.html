@@ -1,0 +1,30 @@
+<h1>Messages List</h1>
+
+<table id="customers">
+  <tr>
+    <th >Identity</th>
+    <th>User's Name</th>
+    <th>User's Email</th>
+    <th>User's Phone</th>
+    <th>User's Area</th>
+    <th>User's Hospital</th>
+    <th>User's Brand</th>
+    <th>User's Dept</th>
+    <th>User's Message</th>
+    <th>Bot's Reply</th>
+    <th>Attachment</th>
+  </tr>
+
+  <tr *ngFor="let message of allMessages">
+    <td>{{message.identity.identity}}</td>
+    <td>{{message.identity.name}}</td>
+    <td>{{message.identity.email}}</td>
+    <td>{{message.identity.phone}}</td>
+    <td>{{message.identity.area}}</td>
+    <td>{{message.identity.hospital}}</td>
+    <td>{{message.user_message}}</td>
+    <td>{{message.bot_reply}}</td>
+    <td><a href="{{message.user_attachment}}" target="_blank" class="" *ngIf="message.user_attachment">Attachment</a></td>
+  </tr>
+
+</table>

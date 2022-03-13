@@ -1,0 +1,59 @@
+<div class="flex flex-col container">
+  <div class="content" *ngIf="showChatArea">
+
+    <header>
+      <img width="45" alt="Abex Logo"
+      src="https://www.abexmedical.com.my/wp-content/uploads/2020/06/round_abex_bc7d93e66ce73c45b24f8809364938d2.png" />
+      <!-- <img src = "https://img.icons8.com/material-two-tone/2x/loading.png"> -->
+      <div class="title">Abex Assistant <span class="online-dot"></span> <span class="online">Online</span>  </div>
+      <div class="cross-btn">
+        <i class="fa fa-times" (click)="toggleChatArea()"></i>
+      </div>
+    </header>
+
+    <div class="chatbot-container">
+
+      <div class="chat-area">
+        <!-- Bots Message  -->
+        <div class="flex flex-col" [ngClass]="{ 'bot-message' : text.type == 'bot' && text.textMessage && text.textMessage.length > 0, 'user-message' : text.type == 'user'}" *ngFor="let text of messagesList">
+          <div class="" *ngIf="text.textMessage && text.textMessage.length > 0">{{text.textMessage}}</div>
+          <a href="{{text.attachment}}" target="_blank" class="" *ngIf="text.attachment">See Atachment</a>
+
+          <div class="flex flex-col"  *ngIf="currentResponse?.message == text.textMessage">
+            <div class="flex flex-col extra-card" *ngFor="let item of currentResponse?.responseCard?.genericAttachments">
+              <div class="" *ngFor="let btn of item.buttons" (click)="chooseSelection(btn.text)">{{btn.text}}</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="typing-indicator bot-message" *ngIf="showTypingIndicator">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- <br/> -->
+    <div class="flex quick-card flex-wrap">
+      <div class="" (click)="chooseSelection(item)" *ngFor="let item of quickMessages">{{item}}</div>
+    </div>
+
+    <div class="mt-auto chat-footers">
+      <label class="input-file">
+        <i class="fa fa-link"></i><input type="file" (change)="pickAttachment($event)" />
+      </label>
+      <input name="message" size="60" rows="1" [(ngModel)]="message" placeholder="Send us message" (keydown.enter)="startChat()">
+
+      <button type="button" class="" (click)="startChat()">Send!</button>
+    </div>
+
+  </div>
+
+  <div class="chatbot-btn" (click)="toggleChatArea()">
+    Chat with Bot
+  </div>
+
+</div>
